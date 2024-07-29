@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "636514201124",
+    "project_id": "pruebaintecap-5be09",
+    "storage_bucket": "pruebaintecap-5be09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636514201124:android:d1d21ad7da08610966f2b1",
+        "android_client_info": {
+          "package_name": "com.intecap.prueba1.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnZEWw4yml5KhvzSHebCUs5O6ABFXD8sI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
