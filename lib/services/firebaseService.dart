@@ -38,3 +38,8 @@ Future<void> agregandoPersonas(String nombre) async {
 Future<void> actualizarDatos(String uid, String nuevoNombre) async {
   await baseDatos.collection('personas').doc(uid).set({'nombre':nuevoNombre});
 }
+
+//Eliminar Datos
+Future<void> eliminarDatos(String uid) async {
+  await baseDatos.collection('personas').doc(uid).delete();
+}
