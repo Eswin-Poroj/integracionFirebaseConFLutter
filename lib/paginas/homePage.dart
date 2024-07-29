@@ -25,11 +25,17 @@ class _HomeState extends State<Home> {
             itemCount: snapshot.data?.length,
             itemBuilder: (context, index) {
               return Dismissible(//sirve para eliminarlo al deslazarlo
+              
                 background: Container(color: Colors.red,
                 child: const Icon(Icons.delete),
                 ),
                 direction: DismissDirection.endToStart,//direccion del deslizamiento
                 key: Key(snapshot.data?[index]['uid']),
+                onDismissed: (direction) async{
+                  await eliminarDatos(snapshot.data?[index]['uid']); //manda a avisar a DB que eliminamos el dato
+
+                  snapshot.data?.removeAt(index);//refresca la lista quitando el objeto eliminado
+                },
                 confirmDismiss: (direction) async {
                   bool resultado = false;
                   
