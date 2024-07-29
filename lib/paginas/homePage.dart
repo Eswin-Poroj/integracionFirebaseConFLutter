@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
                 onDismissed: (direction) async{
                   await eliminarDatos(snapshot.data?[index]['uid']); //manda a avisar a DB que eliminamos el dato
 
-                  snapshot.data?.removeAt(index);//refresca la lista quitando el objeto eliminado
+                  snapshot.data?.removeAt(index);//refresca la lista quitando el objeto eliminadogit remote -v
                 },
                 confirmDismiss: (direction) async {
                   bool resultado = false;
