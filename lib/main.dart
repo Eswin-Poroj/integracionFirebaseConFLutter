@@ -1,6 +1,7 @@
 import 'package:firebase_practica_intecap/paginas/agregarDatos.dart';
 import 'package:firebase_practica_intecap/paginas/editarDatos.dart';
 import 'package:firebase_practica_intecap/paginas/homePage.dart';
+import 'package:firebase_practica_intecap/paginas/initialPage.dart';
 import 'package:flutter/material.dart';
 //importando los paquetes para trabajar con firebase
 import 'package:firebase_core/firebase_core.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Ejemplo Crud Firebase',
       initialRoute: '/',
       routes: {
-        '/':(context)=> const Home(),
+        '/': (context) => const Initialpage(),
+        'home':(context)=> const Home(),
         '/add' : (context) => const AgregarNombrePagina(),
         '/edit' : (context) => const Editardatos(),
       },

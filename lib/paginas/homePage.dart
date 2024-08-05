@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart' as firebase_Auth;
 import 'package:firebase_practica_intecap/services/firebaseService.dart';
 import 'package:flutter/material.dart';
 
@@ -11,12 +12,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+firebase_Auth.FirebaseAuth firebaseAuth = firebase_Auth.FirebaseAuth.instance;
+  void exitToApp()async{
+    firebase_Auth.FirebaseAuth.instance.signOut();
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Sesión Cerrada')));
+    Navigator.pushNamed(context, '/');
+
+  }
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('App bar del crud'),),
+      appBar: AppBar(title: const Text('App bar del crud'),
+      actions: [ElevatedButton(onPressed: (){exitToApp();}, child: const Icon(Icons.exit_to_app))],
+      ),
       body: FutureBuilder(
         future: getPersonas(), 
       builder: (context, snapshot){
